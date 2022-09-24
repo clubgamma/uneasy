@@ -6,7 +6,11 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:check": "nx run-many --all --fix --target=lint",
+    "lint:fix": "nx run-many --all --fix --target=lint",
+    "format:check": "nx format:check --all",
+    "format:fix": "nx format:write --all"
   },
   "private": true,
   "dependencies": {
@@ -54,7 +58,7 @@
   },
   "homepage": "https://github.com/KashishLakhara04/uneasy#readme",
   "lint-staged": {
-    "*.{js, ts}": "eslint --cache --fix",
-    "*.{js,css,md, ts}": "prettier --write"
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
